@@ -78,7 +78,7 @@ def main():
     # Get the script directory
     script_dir = Path(__file__).parent.absolute()
     xml_dir = script_dir / 'xml'
-    csv_dir = xml_dir / 'csv'
+    csv_dir = script_dir / 'csv'
     
     # Create csv directory if it doesn't exist
     csv_dir.mkdir(parents=True, exist_ok=True)
