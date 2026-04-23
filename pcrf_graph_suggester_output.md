@@ -1,31 +1,5 @@
 # PCRF Graph Metric Suggestions (from CSV headers)
 
-## CSV Files Found
-
-- `ConnectionErrorStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterMraPcefLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterMraPcefPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterMraPcefPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterMraPcefStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterPcefPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterPcefStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterShLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterShPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterShPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterShStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterSyLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterSyPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterSyPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `DiameterSyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `IntervalMraStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `IntervalStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `KpiStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `ProtocolErrorStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `ShDataSourceStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `SyDataSourceStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `TpsMraStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-- `TpsStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
-
 ## Suggested Panels
 
 ### Diameter Errors
