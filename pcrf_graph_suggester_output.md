@@ -1,5 +1,31 @@
 # PCRF Graph Metric Suggestions (from CSV headers)
 
+## CSV Files Found
+
+- `ConnectionErrorStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterMraPcefLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterMraPcefPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterMraPcefPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterMraPcefStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterPcefPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterPcefStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterShLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterShPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterShPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterShStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterSyLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterSyPeerLatencyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterSyPeerStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `DiameterSyStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `IntervalMraStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `IntervalStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `KpiStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `ProtocolErrorStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `ShDataSourceStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `SyDataSourceStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `TpsMraStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+- `TpsStats-output-2026-04-19T21:00:00-2026-04-21T00:00:00.csv`
+
 ## Suggested Panels
 
 ### Diameter Errors
@@ -15,15 +41,18 @@
 
 ### Gx/PCEF TPS
 
+- `PcefCCRICurrentTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-I)
 - `PcefCCRIMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-I)
-- `PcefCCRUMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-U)
-- `PcefCCRTMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-T)
-- `PcefRARMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (RAR)
-- `PcefGxSummaryMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (calculated as `PcefCCRIMaxTPS+PcefCCRUMaxTPS+PcefCCRTMaxTPS+PcefRARMaxTPS`)
+- `PcefCCRUCurrentTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-U)
+- `PcefCCRTCurrentTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (CCR-T)
+- `PcefRARCurrentTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (RAR)
+- `PcefGxSummaryCurrentTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (calculated as `PcefCCRICurrentTPS+PcefCCRUCurrentTPS+PcefCCRTCurrentTPS+PcefRARCurrentTPS`)
+- `PcefGxSummaryMaxTPS` from `TpsStats-*.csv` grouped by `PolicyServer` (calculated as `PcefCCRIMaxTPS+PcefCCRUCurrentTPS+PcefCCRTCurrentTPS+PcefRARCurrentTPS`)
 
 ### MPE Overview
 
-- `MaxTransactionsPerSecond` from `KpiStats-*.csv` grouped by `PolicyServer` (Overall TPS)
+- `MaxTransactionsPerSecond` from `KpiStats-*.csv` grouped by `PolicyServer` (Overall Max TPS)
+- `CurrentTransactionsPerSecond` from `KpiStats-*.csv` grouped by `PolicyServer` (Overall Current TPS)
 - `MaxTPSPercentageOfCapacity` from `KpiStats-*.csv` grouped by `PolicyServer` (TPS vs capacity)
 - `CurrentSessionCount` from `KpiStats-*.csv` grouped by `PolicyServer` (Active PCRF sessions)
 - `CurrentSessionPercentageOfCapacity` from `KpiStats-*.csv` grouped by `PolicyServer` (Sessions vs capacity)
@@ -40,11 +69,13 @@
 
 ### PFE/MRA Overview
 
+- `PcefCCRICurrentTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-I)
 - `PcefCCRIMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-I)
-- `PcefCCRUMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-U)
-- `PcefCCRTMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-T)
-- `PcefRARMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (RAR)
-- `PcefGxSummaryMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (calculated as `PcefCCRIMaxTPS+PcefCCRUMaxTPS+PcefCCRTMaxTPS+PcefRARMaxTPS`)
+- `PcefCCRUCurrentTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-U)
+- `PcefCCRTCurrentTPS` from `TpsMraStats-*.csv` grouped by `MRA` (CCR-T)
+- `PcefRARCurrentTPS` from `TpsMraStats-*.csv` grouped by `MRA` (RAR)
+- `PcefGxSummaryCurrentTPS` from `TpsMraStats-*.csv` grouped by `MRA` (calculated as `PcefCCRICurrentTPS+PcefCCRUCurrentTPS+PcefCCRTCurrentTPS+PcefRARCurrentTPS`)
+- `PcefGxSummaryMaxTPS` from `TpsMraStats-*.csv` grouped by `MRA` (calculated as `PcefCCRIMaxTPS+PcefCCRUCurrentTPS+PcefCCRTCurrentTPS+PcefRARCurrentTPS`)
 - `AverageTransactionOutProcessingTime` from `DiameterMraPcefLatencyStats-*.csv` grouped by `MRA`
 - `MaxTransactionOutProcessingTime` from `DiameterMraPcefLatencyStats-*.csv` grouped by `MRA`
 - `CCRIMessagesTimeoutCount` from `DiameterMraPcefStats-*.csv` grouped by `MRA`
