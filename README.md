@@ -36,26 +36,26 @@ six             1.17.0
 
 ## Usage
 
-### convert xml to csv
+### 1 - convert xml to csv
 
 Run 'python3 xml_to_csv' converter
 
 Find csv output files in the csv folder 
 
-### check report template
+### 2 - check report template
 
 Check template in 'pcrf_graph_suggester_output.md'. Define metrics to be visualised.
 
-### run report builder
+### 3 - run report builder
 
 Run 'build_report.sh'
 
 It will do the following:
 
-1) by launching 'visualize_panels.py' it will create a lot of png files in charts folder. Each graph will be created according to the template defined. Along with png files, it will create index.md document referring to all chart files.
+1) by launching 'visualize_panels.py' it will create a lot of png files in charts folder. Each graph will be created according to the template defined. Along with png files, it will create 'index.md' document referring to all chart files.
 
-2) by launching 'md_to_odt.py' it will crate ODT document with embedded images from index.md
+2) by launching 'md_to_odt.py' it will create ODT document with embedded images from 'index.md'
 
-### check the report
+### 4 - check the report
 
 Check 'charts_report_xxx.odt' document as result
